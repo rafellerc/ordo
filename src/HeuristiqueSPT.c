@@ -65,7 +65,7 @@ int SPT(int** duree,int* h,int* H,int N_JOBS,int N_MACHINES){
 		M[jMin]++;
 		
 		
-		printf("On place op %d du job %d -> date fin: %d\n",M[jMin]-1,jMin,fin);	
+		//printf("On place op %d du job %d -> date fin: %d\n",M[jMin]-1,jMin,fin);	
     }
     
     int valObj=0;
