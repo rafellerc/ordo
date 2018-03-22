@@ -9,7 +9,7 @@ typedef struct{
 	int index;
 }Job_NEH;
 
-int compare(const void *, const void *);
+int compare_NEH(const void *, const void *);
 
 int isCollisional(int ,int ,int ,int );
 

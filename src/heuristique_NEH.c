@@ -1,7 +1,7 @@
 #include "heuristique_NEH.h"
 
 
-int compare(const void *a, const void *b){
+int compare_NEH(const void *a, const void *b){
     return (*(Job_NEH *)a).totalDuration > (*(Job_NEH *)b).totalDuration?1:-1;
 }
 
@@ -53,7 +53,7 @@ int heuristique_NEH(int** durees,int* h,int* H,int N_JOBS,int N_MACHINES){
   printf("Original non-ordered sumCi: %d\n",getSumCiPartial(jobOrderList,jobNum,h,H));
 
   // Orders the Jobs in increasing order of totalDuration
-  qsort((void *)jobOrderList, jobNum, sizeof(Job_NEH), compare);
+  qsort((void *)jobOrderList, jobNum, sizeof(Job_NEH), compare_NEH);
 
   /*
   printf("List ordered in increasing order of totalDuration\n");

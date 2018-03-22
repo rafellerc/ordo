@@ -19,25 +19,23 @@ int notCollisional(int t,int opDuration,int h,int H){
 		return 0;
 }
 
-int max(int a,int b){
+/*int max(int a,int b){
 	if(a > b) 
 		return a;
 	else 
 		return b;
-}
+}*/
 
 void printResult(Job* list,int num){
-	printf("Ordonnancement:\n");
+	/*printf("Ordonnancement:\n");
 	for(int i = 0; i < num;i++){
 		printf("the %d th job: ", list[i].index + 1);
 		printf("%d %d %d\n", list[i].operationStartTime[0],list[i].operationStartTime[1],list[i].operationStartTime[2]);
-	}
+	}*/
 }
 
-int heuristique_gupta(InstanceFlowShop* ex){
-	int jobNum = ex->N_JOBS;
-	int* h = ex->h;
-	int* H = ex->H;
+int heuristique_gupta(int** durees,int* h,int* H,int N_JOBS,int N_MACHINES){
+	int jobNum = N_JOBS;
 	
 	//create a jobList which will be sorted
 	Job* jobOrderList = malloc(jobNum*sizeof(Job));
@@ -47,11 +45,11 @@ int heuristique_gupta(InstanceFlowShop* ex){
 
 	//distribute every job in joborderList
 	for(int i = 0;i < jobNum;i++){
-		// ex->durees[i] == NULL
-		jobOrderList[i].opDurations[0] = ex->durees[i][0];
-		jobOrderList[i].opDurations[1] = ex->durees[i][1];
-		jobOrderList[i].opDurations[2] = ex->durees[i][2];
-		jobOrderList[i].totalDuration = ex->durees[i][0] + ex->durees[i][1] + ex->durees[i][2];
+		// durees[i] == NULL
+		jobOrderList[i].opDurations[0] = durees[i][0];
+		jobOrderList[i].opDurations[1] = durees[i][1];
+		jobOrderList[i].opDurations[2] = durees[i][2];
+		jobOrderList[i].totalDuration = durees[i][0] + durees[i][1] + durees[i][2];
 		jobOrderList[i].index = i;
 	}
 	

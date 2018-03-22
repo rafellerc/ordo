@@ -2,7 +2,7 @@
 
 int main(int nargs,char** strargs){
 	
-	Heuristic heuristicsArray[]= {&heuristicTEST,&heuristique_NEH,&SPT};
+	Heuristic heuristicsArray[]= {&heuristicTEST,&heuristique_NEH,&SPT,&heuristique_gupta};
 	int nJobs=40;
 	if(nargs==2)
 		nJobs=atoi(strargs[1]);
@@ -34,7 +34,7 @@ int heuristicTEST(int** durees,int* h,int* H,int N_JOBS,int N_MACHINES){
 	int N= N_JOBS;
 
 	
-	printf("Durées :\n");
+	printf("Durees :\n");
 	printARRAY(durees,N,M);
 	printf("Interruptions:\n");
 	int i;
