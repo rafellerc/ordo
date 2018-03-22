@@ -2,7 +2,7 @@
 
 int main(int nargs,char** strargs){
 	
-	Heuristic heuristicsArray[]= {&heuristicTEST,&SPT};
+	Heuristic heuristicsArray[]= {&heuristicTEST,&heuristique_NEH,&SPT};
 	int nJobs=40;
 	if(nargs==2)
 		nJobs=atoi(strargs[1]);
