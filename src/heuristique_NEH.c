@@ -60,7 +60,7 @@ int heuristique_NEH(int** durees,int* h,int* H,int N_JOBS,int N_MACHINES){
   for(int k=0; k<jobNum; k++)
     printf("%d\n",jobOrderList[k].index);*/
 
-  printf("Ordered sumCi: %d\n",getSumCiPartial(jobOrderList,jobNum,h,H));
+  printf("Jobs Ordered by Total Work: %d\n",getSumCiPartial(jobOrderList,jobNum,h,H));
 
   for(int i = 1; i < jobNum; i++){
     // sumCi is the array that contains the sumCi for each of the permutations

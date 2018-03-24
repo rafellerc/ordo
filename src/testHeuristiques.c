@@ -1,13 +1,13 @@
 #include "testHeuristiques.h"
 
 int main(int nargs,char** strargs){
-	
-	Heuristic heuristicsArray[]= {&heuristicTEST,&heuristique_NEH,&SPT,&heuristique_gupta};
+
+	Heuristic heuristicsArray[]= {&heuristicTEST,&heuristique_NEH,&SPT,&heuristique_gupta,&heuristique_1};
 	int nJobs=40;
 	if(nargs==2)
 		nJobs=atoi(strargs[1]);
-	
-	
+
+
     InstanceFlowShop* ex1 = ExampleCreate(nJobs);
     {
         int i;
@@ -19,7 +19,7 @@ int main(int nargs,char** strargs){
 
     }
     (*(ex1->F))(ex1->N_JOBS,ex1->N_MACHINES,ex1->durees, ex1->h, ex1->H);
-	
+
 
 
 }
@@ -33,7 +33,7 @@ int heuristicTEST(int** durees,int* h,int* H,int N_JOBS,int N_MACHINES){
 	//nbr taches
 	int N= N_JOBS;
 
-	
+
 	printf("Durees :\n");
 	printARRAY(durees,N,M);
 	printf("Interruptions:\n");
@@ -53,12 +53,8 @@ void printARRAY(int** array, int width , int length){
 		int j;
 		for(j=0;j<length;j++){
 			printf("%d; ",array[i][j]);
-		}	
+		}
 		printf("\n");
 	}
 
 }
-
-
-
-
